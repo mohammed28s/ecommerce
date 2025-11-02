@@ -4,8 +4,8 @@ spring:
 
   datasource:
     url: jdbc:postgresql://ep-long-bonus-abhdfu9f-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require
-    username: neondb_owner
-    password: npg_vBfrudhK13Ya
+    username: ${DB_USERNAME}       #neondb********
+    password: ${DB_PASSWORD}        #npg_********
     driver-class-name: org.postgresql.Driver
 
   jpa:
