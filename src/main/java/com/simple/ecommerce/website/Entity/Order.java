@@ -16,9 +16,9 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @OneToMany
-    @JoinColumn(table = "users", referencedColumnName = "id")
-    private Integer user_id;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     private BigDecimal total;
 

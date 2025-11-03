@@ -15,13 +15,13 @@ public class Cart {
     @GeneratedValue
     private Integer id;
 
-    @OneToMany
-    @JoinColumn(table = "users", referencedColumnName = "id")
-    private Integer user_id;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @OneToMany
-    @JoinColumn(table = "products", referencedColumnName = "id")
-    private Integer product_id;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     private Integer quantity;
 

@@ -5,6 +5,7 @@ package com.simple.ecommerce.website.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
 
 
 @Data
@@ -20,7 +21,11 @@ public class User {
 
     private String password;   // This is must be hashed
 
+    @OneToMany(mappedBy = "user")
+    private List<Cart> carts;
 
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
 
 
 }
