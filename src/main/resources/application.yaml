@@ -3,10 +3,17 @@ spring:
     name: simple-ecommerce-website
 
   datasource:
-    url: jdbc:postgresql://ep-long-bonus-abhdfu9f-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require
-    username: ${DB_USERNAME}       #neondb********
-    password: ${DB_PASSWORD}        #npg********
+    url: jdbc:postgresql://ep-summer-bonus-abbhha3k-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require&channelBinding=require
+    username: ${DB_USERNAME}       # or directly: neondb_owner
+    password: ${DB_PASSWORD}       # or directly: npg_sUfgkV95XmNa
     driver-class-name: org.postgresql.Driver
+
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 5
+      idle-timeout: 10000
+      connection-timeout: 20000
+      keepalive-time: 30000
 
   jpa:
     hibernate:
