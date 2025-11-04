@@ -4,8 +4,8 @@ spring:
 
   datasource:
     url: jdbc:postgresql://ep-summer-bonus-abbhha3k-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require&channelBinding=require
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    username: ${DB_USERNAME_DEV}
+    password: ${DB_PASSWORD_DEV}
     driver-class-name: org.postgresql.Driver
 
     hikari:
@@ -13,7 +13,7 @@ spring:
       maximum-pool-size: 5
       idle-timeout: 10000
       connection-timeout: 20000
-      keepalive-time: 30000
+      max-lifetime: 30000
 
   jpa:
     hibernate:
