@@ -22,7 +22,7 @@ public class Product {
 
     private String description;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "Product")
     private List<Cart> carts;
 
 }
