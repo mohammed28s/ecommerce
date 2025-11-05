@@ -21,10 +21,10 @@ public class User {
 
     private String password;   // This is must be hashed
 
-    @OneToMany(mappedBy = "User")
+    @OneToMany(mappedBy = "user")
     private List<Cart> carts;
 
-    @OneToMany(mappedBy = "User")
+    @OneToMany(mappedBy = "user")
     private List<Order> orders;
 
 

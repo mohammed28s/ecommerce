@@ -22,7 +22,7 @@ public class Product {
 
     private String description;
 
-    @OneToMany(mappedBy = "Product")
+    @OneToMany(mappedBy = "product",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Cart> carts;
 
 }
