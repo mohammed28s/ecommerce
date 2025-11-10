@@ -71,6 +71,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+    <groupId>org.xerial</groupId>
+    <artifactId>sqlite-jdbc</artifactId>
+    <version>3.45.3.0</version>
+</dependency>
+
+<!-- Optional: Hibernate dialect for SQLite -->
+<dependency>
+    <groupId>com.github.gwenn</groupId>
+    <artifactId>sqlite-dialect</artifactId>
+    <version>0.1.2</version>
+</dependency>
+
 	</dependencies>
 
 	<build>
