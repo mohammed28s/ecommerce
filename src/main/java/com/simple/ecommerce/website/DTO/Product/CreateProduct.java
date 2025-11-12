@@ -1,12 +1,18 @@
 package com.simple.ecommerce.website.DTO.Product;
 
+
+
+
 import java.math.BigDecimal;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 
-
+@Data
+@AllArgsConstructor
 public class CreateProduct { // This for creating new product 
 
     @NotBlank

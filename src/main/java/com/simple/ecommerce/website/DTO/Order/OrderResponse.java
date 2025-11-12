@@ -1,25 +1,34 @@
 package com.simple.ecommerce.website.DTO.Order;
 
+
+
+
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
 import com.simple.ecommerce.website.DTO.Cart.CartItem;
-import com.simple.ecommerce.website.DTO.User.UserResponse;
 import com.simple.ecommerce.website.Enum.OrderStatus;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+
+@Data
+@AllArgsConstructor
 public class OrderResponse {
 
-    Integer id;
+    private Integer id;
 
-    UserResponse userId;
+    private Integer userId;
 
-    BigDecimal total;
+    private BigDecimal total;
 
-    OrderStatus status;
+    private OrderStatus status;
 
-    LocalDateTime createdAt;
+    private LocalDateTime createdAt;
 
-    List<CartItem> items; // detailed lines
+    private List<CartItem> items; // detailed lines
 
 }

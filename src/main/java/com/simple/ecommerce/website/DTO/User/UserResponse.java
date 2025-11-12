@@ -2,10 +2,16 @@ package com.simple.ecommerce.website.DTO.User;
 
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class UserResponse {
 
-    Integer id;
+    private Integer id;
 
-    String username;
+    private String username;
 
+    
 }

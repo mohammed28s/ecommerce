@@ -2,16 +2,22 @@ package com.simple.ecommerce.website.DTO.Product;
 
 
 
+import java.math.BigDecimal;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
+
+
+@Data
+@AllArgsConstructor
 public class ProductResponse {
 
-    Integer id;
+    private Integer id;
 
-    String name;
+    private String name;
 
-    String description;
+    private String description;
 
-    BigDecimal price;
-
+    private BigDecimal price;
 
 }

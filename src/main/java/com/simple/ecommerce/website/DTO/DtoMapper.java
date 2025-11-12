@@ -1,6 +1,8 @@
 package com.simple.ecommerce.website.DTO;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
 
 import com.simple.ecommerce.website.DTO.Cart.CartItem;
 import com.simple.ecommerce.website.DTO.Order.OrderResponse;
@@ -11,7 +13,6 @@ import com.simple.ecommerce.website.Entity.Product;
 import com.simple.ecommerce.website.Entity.User;
 
 public class DtoMapper {
-
 
     // Product
     public static ProductResponse toResponse(Product p) {
@@ -32,31 +33,25 @@ public class DtoMapper {
     }
 
     // Cart / Item
-    public static CartItem toCartItem(CartItem c) {
-        Product p = c.getProdct();
-        BigDecimal sub = p.getPrice()
-
-        .multiply(BigDecimal.valueOf(c.getQuantity()));
+    public static CartItem toCartItem(Product p, Integer quantity) {
+        BigDecimal sub = p.getPrice().multiply(BigDecimal.valueOf(quantity));
         return new CartItem(
             DtoMapper.toResponse(p),
-            c.getQuantity(),
+            quantity,
             sub
         );
-
-
-        // Order
-        public static OrderResponse toRespone(Order o, List<CartItem> lines){
-
-            retrun new OrderResponse(
-                o.getId(),
-                o.getUser().getId(),
-                o.getTotal(),
-                o.getStatus(),
-                LocalDateTime.now(),
-                lines
-            );
-
-        }
     }
 
+    // Order
+    public static OrderResponse toResponse(Order o, List<CartItem> lines) {
+        return new OrderResponse(
+            o.getId(),
+            o.getUser().getId(),
+            o.getTotal(),
+            o.getStatus(),
+            LocalDateTime.now(),
+            lines
+        );
+    }
+    
 }
