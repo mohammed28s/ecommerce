@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import java.math.BigDecimal;
 
+import com.simple.ecommerce.website.Enum.OrderStatus;
+
 
 
 @Data
@@ -13,16 +15,20 @@ import java.math.BigDecimal;
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @Column(nullable = false, precision = 
+    10, scale = 2)
     private BigDecimal total;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 50, nullable = false)
+    private OrderStatus status;
 
 
 

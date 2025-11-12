@@ -14,13 +14,17 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY
+    )
     private Integer id;
 
+    @Column(nullable = false, unique = true, length = 255)
     private String username;
 
+    @Column(nullable = false, length = 255)
     private String password;   // This is must be hashed
 
+    
     @OneToMany(mappedBy = "user")
     private List<Cart> carts;
 
