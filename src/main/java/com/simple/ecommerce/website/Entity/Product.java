@@ -2,19 +2,20 @@ package com.simple.ecommerce.website.Entity;
 
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import java.math.BigDecimal;
 import java.util.List;
 
 
 @Data
+@Builder
 @Entity
 @Table(name = "products")
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false, length =255)    
