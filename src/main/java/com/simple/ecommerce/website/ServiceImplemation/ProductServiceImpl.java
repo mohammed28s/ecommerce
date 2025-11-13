@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class ProductImpl {
+public class ProductServiceImpl {
 
 
     @Autowired
