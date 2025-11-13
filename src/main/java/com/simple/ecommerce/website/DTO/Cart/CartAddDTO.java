@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class CartAdd {
+public class CartAddDTO {
 
     @Positive
     Integer productId;

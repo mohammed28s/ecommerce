@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.simple.ecommerce.website.DTO.Cart.CartItem;
+import com.simple.ecommerce.website.DTO.Cart.CartItemDTO;
 import com.simple.ecommerce.website.Enum.OrderStatus;
 
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class OrderResponse {
+public class OrderResponseDTO {
 
     private Integer id;
 
@@ -29,6 +29,6 @@ public class OrderResponse {
 
     private LocalDateTime createdAt;
 
-    private List<CartItem> items; // detailed lines
+    private List<CartItemDTO> items; // detailed lines
 
 }

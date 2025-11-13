@@ -5,7 +5,7 @@ package com.simple.ecommerce.website.DTO.Order;
 
 import java.util.List;
 
-import com.simple.ecommerce.website.DTO.Cart.CartAdd;
+import com.simple.ecommerce.website.DTO.Cart.CartAddDTO;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
@@ -15,8 +15,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class OrderCreate {
+public class OrderCreateDTO {
 
     @NotEmpty
-    List<@Valid CartAdd> items;
+    List<@Valid CartAddDTO> items;
 }

@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ProductResponse {
+public class ProductResponseDTO {
 
     private Integer id;
 

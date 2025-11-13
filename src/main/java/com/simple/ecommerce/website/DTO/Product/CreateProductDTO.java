@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class CreateProduct { // This for creating new product 
+public class CreateProductDTO { // This for creating new product 
 
     @NotBlank
     String name;
