@@ -1,9 +1,7 @@
 package com.simple.ecommerce.website.ServiceImplemation;
 
+import java.util.List;
 
-
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.simple.ecommerce.website.DTO.DtoMapper;
@@ -11,8 +9,10 @@ import com.simple.ecommerce.website.DTO.Cart.CartAddDTO;
 import com.simple.ecommerce.website.DTO.Cart.CartItemDTO;
 import com.simple.ecommerce.website.Entity.Cart;
 import com.simple.ecommerce.website.Entity.Product;
+import com.simple.ecommerce.website.Entity.User;
 import com.simple.ecommerce.website.Repository.CartRepository;
 import com.simple.ecommerce.website.Repository.ProductRepository;
+import com.simple.ecommerce.website.ServiceInterface.CartService;
 import com.simple.ecommerce.website.ServiceInterface.UserService;
 
 import jakarta.transaction.Transactional;
@@ -20,17 +20,13 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class CartServiceImpl {
+public class CartServiceImpl implements CartService {
 
+    private final CartRepository cartRepository;
 
-    @Autowired
-    private CartRepository cartRepository;
+    private final UserService userService;
 
-    @Autowired
-    private UserService userService;
-
-    @Autowired
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
 
 
@@ -49,18 +45,18 @@ public class CartServiceImpl {
                                                .product(product)
                                                .quantity(0)
                                                .build());
-        cart.setQuantity(cart.getQuantity() + dto.quantity());
-        return DtoMapper.toCartItemDto(cartRepository.save(cart));
+        cart.setQuantity(cart.getQuantity() + dto.getQuantity());
+        return DtoMapper.toCartItemDTO(cartRepository.save(cart));
 }
 
 
  @Override
-    @Transactional(readOnly = true)
-    public List<CartItemDto> getCart(Integer userId) {
+    @Transactional()
+    public List<CartItemDTO> getCart(Integer userId) {
         User user = userService.getEntity(userId);
-        return cartRepo.findByUser(user)
+        return cartRepository.findByUser(user)
                        .stream()
-                       .map(DtoMapper::toCartItemDto)
+                       .map(DtoMapper::toCartItemDTO)
                        .toList();
     }
 
@@ -69,15 +65,15 @@ public class CartServiceImpl {
     @Transactional
     public void removeItem(Integer userId, Integer productId) {
         User user = userService.getEntity(userId);
-        cartRepo.deleteByUserAndProduct(user,
-               productRepo.getReferenceById(productId));
+        cartRepository.deleteByUserAndProduct(user,
+               productRepository.getReferenceById(productId));
     }
 
     @Override
     @Transactional
     public void clearCart(Integer userId) {
         User user = userService.getEntity(userId);
-        cartRepo.deleteByUser(user);
+        cartRepository.deleteByUser(user);
     }
 
 }

@@ -8,6 +8,7 @@ import com.simple.ecommerce.website.DTO.Cart.CartItemDTO;
 import com.simple.ecommerce.website.DTO.Order.OrderResponseDTO;
 import com.simple.ecommerce.website.DTO.Product.ProductResponseDTO;
 import com.simple.ecommerce.website.DTO.User.UserResponseDTO;
+import com.simple.ecommerce.website.Entity.Cart;
 import com.simple.ecommerce.website.Entity.Order;
 import com.simple.ecommerce.website.Entity.Product;
 import com.simple.ecommerce.website.Entity.User;
@@ -40,6 +41,10 @@ public class DtoMapper {
             quantity,
             sub
         );
+    }
+
+    public static CartItemDTO toCartItemDTO(Cart cart) {
+        return toCartItem(cart.getProduct(), cart.getQuantity());
     }
 
     // Order

@@ -2,13 +2,19 @@ package com.simple.ecommerce.website.Entity;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 
 @Data
 @Entity
 @Table(name = "carts")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cart {
 
     @Id

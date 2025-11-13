@@ -4,7 +4,6 @@ package com.simple.ecommerce.website.ServiceImplemation;
 
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +20,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserServiceImpl implements com.simple.ecommerce.website.ServiceInterface.UserService {
 
-    @Autowired
     private final UserRepository userRepository;
 
     private final PasswordEncoder passwordEncoder; // BCrypt bean
@@ -59,3 +57,4 @@ public class UserServiceImpl implements com.simple.ecommerce.website.ServiceInte
     }
 
 }
+

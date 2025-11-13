@@ -5,19 +5,15 @@ package com.simple.ecommerce.website.ServiceInterface;
 
 import java.util.List;
 
-import com.simple.ecommerce.website.Entity.Order;
+import com.simple.ecommerce.website.DTO.Order.OrderCreateDTO;
+import com.simple.ecommerce.website.DTO.Order.OrderResponseDTO;
 
 
 public interface OrderService {
 
-    List<Order> getOrdersByUserId(Integer userId);  // get all order ids by user id
+    OrderResponseDTO createOrder(Integer userId, OrderCreateDTO dto);
 
-    Order getOrderById(Integer orderId);  // get order by order id
+    List<OrderResponseDTO> getMyOrders(Integer userId);
 
-    Order saveOrder(Order order);  // create new order
-
-    void deleteOrder(Integer orderId); // delete order by id
-
-    Order updateOrder(Integer orderId, Order order);  // updated order info
-
+    OrderResponseDTO getOrder(Integer userId, Integer orderId);
 }
