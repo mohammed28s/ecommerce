@@ -3,12 +3,14 @@ package com.simple.ecommerce.website.Entity;
 
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
 
 
 @Data
+@Builder
 @Entity
 @Table(name = "users")
 public class User {

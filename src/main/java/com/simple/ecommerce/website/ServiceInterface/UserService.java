@@ -1,7 +1,5 @@
 package com.simple.ecommerce.website.ServiceInterface;
 
-import java.util.List;
-
 import com.simple.ecommerce.website.DTO.User.UserRegisterDTO;
 import com.simple.ecommerce.website.DTO.User.UserResponseDTO;
 import com.simple.ecommerce.website.Entity.User;
