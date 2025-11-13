@@ -2,21 +2,18 @@ package com.simple.ecommerce.website.ServiceInterface;
 
 import java.util.List;
 
-import com.simple.ecommerce.website.Entity.Cart;
+import com.simple.ecommerce.website.DTO.Cart.CartAddDTO;
+import com.simple.ecommerce.website.DTO.Cart.CartItemDTO;
+
 
 public interface CartService {
 
-    List<Cart> getAllCarts();  // get all carts
+    CartItemDTO addItem(Integer userId, CartAddDTO dto); // add or create new item
 
-    Cart getCartById(Integer cartId);  // get cart by id
+    List<CartItemDTO> getCart(Integer userId);  // get all the carts for the specific user
 
-    Cart saveCart(Cart cart);  // create new cart
+    void removeItem(Integer userId, Integer productId); // remove the item for the specific user
 
-    void deleteCart(Integer cartId); // delete cart by id
-
-    Cart updateCart(Integer cartId, Cart cart);  // update existing cart info
-
-
-
+    void clearCart(Integer userId); // remove cart or item
 
 }
