@@ -3,7 +3,7 @@ spring:
     name: simple-ecommerce-website
 
   datasource:
-    url: jdbc:sqlite:/Users/mohd24s_tkd/Desktop/ecommerce.db
+    url: ${DB_URL}
     driver-class-name: org.sqlite.JDBC
 
   jpa:
