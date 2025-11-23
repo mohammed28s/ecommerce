@@ -1,4 +1,4 @@
-package com.simple.ecommerce.website.ServiceImplemation;
+package com.simple.ecommerce.website.ServiceImplementation;
 
 
 
@@ -57,4 +57,3 @@ public class UserServiceImpl implements com.simple.ecommerce.website.ServiceInte
     }
 
 }
-

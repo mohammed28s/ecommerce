@@ -1,4 +1,9 @@
-package com.simple.ecommerce.website.ServiceImplemation;
+package com.simple.ecommerce.website.ServiceImplementation;
+
+
+
+
+
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -16,6 +21,7 @@ import com.simple.ecommerce.website.Entity.Product;
 import com.simple.ecommerce.website.Entity.User;
 import com.simple.ecommerce.website.Enum.OrderStatus;
 import com.simple.ecommerce.website.Repository.CartRepository;
+import com.simple.ecommerce.website.Repository.OrderRepository;
 import com.simple.ecommerce.website.Repository.OrderRepostiory;
 import com.simple.ecommerce.website.Repository.ProductRepository;
 import com.simple.ecommerce.website.ServiceInterface.OrderService;
@@ -25,7 +31,7 @@ public class OrderServiceImpl  implements OrderService {
 
 
     @Autowired
-     private OrderRepostiory orderRepo;
+     private OrderRepository orderRepo;
 
      @Autowired
      private CartRepository cartRepo;
@@ -38,7 +44,7 @@ public class OrderServiceImpl  implements OrderService {
 
 
 
-        @Override
+    @Override
     @Transactional
     public OrderResponseDTO createOrder(Integer userId, OrderCreateDTO dto) {
         User user = userService.getEntity(userId);

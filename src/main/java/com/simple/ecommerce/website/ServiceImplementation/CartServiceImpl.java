@@ -1,4 +1,4 @@
-package com.simple.ecommerce.website.ServiceImplemation;
+package com.simple.ecommerce.website.ServiceImplementation;
 
 import java.util.List;
 

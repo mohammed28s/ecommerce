@@ -1,5 +1,4 @@
-package com.simple.ecommerce.website.ServiceImplemation;
-
+package com.simple.ecommerce.website.ServiceImplementation;
 
 
 
@@ -24,12 +23,12 @@ public class ProductServiceImpl {
 
 
     @Autowired
-    private final ProductRepository productRepository;
-
+    private ProductRepository productRepository;
 
     
     @Transactional  // Create or adding new product
     public ProductResponseDTO addProduct(CreateProductDTO dto) { 
+
 
         Product p = Product.builder()
         .name(dto.getName())
