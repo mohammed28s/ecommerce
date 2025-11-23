@@ -22,7 +22,6 @@ import com.simple.ecommerce.website.Entity.User;
 import com.simple.ecommerce.website.Enum.OrderStatus;
 import com.simple.ecommerce.website.Repository.CartRepository;
 import com.simple.ecommerce.website.Repository.OrderRepository;
-import com.simple.ecommerce.website.Repository.OrderRepostiory;
 import com.simple.ecommerce.website.Repository.ProductRepository;
 import com.simple.ecommerce.website.ServiceInterface.OrderService;
 import com.simple.ecommerce.website.ServiceInterface.UserService;
